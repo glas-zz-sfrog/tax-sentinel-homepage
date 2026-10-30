@@ -1,6 +1,6 @@
 # Tax Sentinel public homepage
 
-Status: **local preparation only; NOT PUBLISHED**. Publishing requires the operator's explicit authorization. No remote repository, push, Pages activation or custom domain is configured by this preparation.
+Status: **publication authorized; GitHub Pages enabled**. Repository: https://github.com/glas-zz-sfrog/tax-sentinel-homepage. Publishing source: main, /docs. HTTPS is enforced; no custom domain is configured. Deployment success and public availability must be verified separately.
 
 This standalone website repository contains only public-facing HTML/CSS, one approved brand image, and deployment instructions. It is not the Tax Sentinel application repository and contains no application modules, accounts, credentials, screenshots or evidence packets. There are no dependencies, scripts, forms or browser storage.
 
@@ -14,20 +14,20 @@ python -m http.server 8790 --bind 127.0.0.1 --directory docs
 
 Open `http://127.0.0.1:8790/`. Stop with Ctrl+C. Do not serve the parent application directory.
 
-## Deploy only after explicit authorization
+## Deployment configuration and future updates
 
 1. Confirm the GitHub owner and create a **new, empty website-only repository**, suggested name `tax-sentinel-homepage`. Use Public if appropriate for the account's GitHub Pages plan. Do not reuse any application or trading-system repository. Do not add starter files remotely.
 2. Review `git ls-files`: only this README, `.gitignore`, `.gitattributes`, `docs/index.html`, `docs/styles.css`, `docs/.nojekyll`, and `docs/assets/owl.png` should be tracked. Review the actual publication content. Never copy private source, configuration, data, screenshots or credentials into this repo.
-3. From this separate repository, substitute the confirmed owner below. These commands are instructions only and have NOT been executed:
+3. From this separate repository, substitute the confirmed owner below. Initial publication used the following commands (do not repeat remote creation on an existing checkout):
 
 ```powershell
-git remote add origin https://github.com/OWNER/tax-sentinel-homepage.git
+git remote add origin https://github.com/glas-zz-sfrog/tax-sentinel-homepage.git
 git push -u origin HEAD:main
 ```
 
 4. On that repository, open **Settings → Pages**. Set **Source: Deploy from a branch**, select **main** and **/docs**, then Save. No custom Actions workflow or package installation is required. The `.nojekyll` file marks a static site.
 5. Wait for GitHub's Pages deployment to succeed, verify **Enforce HTTPS**, and use the actual **Visit site** URL reported by Pages settings. Check the page, CSS and image at that HTTPS address. Check the narrow mobile layout. Do not confuse the GitHub repository URL or localhost preview with the public homepage.
-6. Record and return the verified public HTTPS URL to the operator for Alpaca Connect registration. Expected project-site shape is `https://OWNER.github.io/tax-sentinel-homepage/`; this is a template, not a deployed URL or a guaranteed domain. The owner has not been selected yet.
+6. Record and return the verified public HTTPS URL to the operator for Alpaca Connect registration. Expected project-site shape is `https://OWNER.github.io/tax-sentinel-homepage/`; this is a template, not a deployed URL or a guaranteed domain. The selected owner is glas-zz-sfrog.
 
 After Pages is enabled, future pushes to the selected source publish changes. Obtain the applicable publishing authorization before such pushes. No OAuth callback handler belongs on this public informational site; do not replace the application's separately registered local callback with the homepage URL.
 
